@@ -1,9 +1,18 @@
 <div class="container">
+  <app-data (serverCreated) = "onServerCreated($event)" 
+  (blueprintCreated) = "onBlueprintCreated($event)"></app-data>
+  <hr>
   <div class="row">
-    <div class="text-bg-primary p-3">
-    <h3 class="text-bg-primary p-3">Welcome to angular project</h3>
-  </div>
-</div>
-
-  <app-task1></app-task1>
+    <div class="col-xs-12">
+    <div class="col-xs-12">
+      <button class="btn text-bg-secondary" (click)="onChangeFirst()">Change Button</button>
+      <button class="btn text-bg-danger" (click)="onDestroy()">Destroy</button>
+       <app-server-element *ngFor="let serverElement of serverElements" [srvElement] = "serverElement"
+       [name]="serverElement.name">
+        <h4 #paragraphContent>
+        <strong *ngIf="serverElement.type === 'server'" style="color: 'red'">{{serverElement.content}}</strong>
+        <strong *ngIf="serverElement.type === 'blueprint'">{{serverElement.content}}</strong>
+    </h4></app-server-element>
+    </div>
+    </div>
 </div>
