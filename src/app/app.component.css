@@ -1,6 +1,7 @@
 h3{
-    color: darkblue
-}
-.container{
-    background-color:aliceblue
+    color: darkblue;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    font-size: 40px;
 }

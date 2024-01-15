@@ -1,4 +1,10 @@
-<p>task1 works!</p>
-<button class="btn btn-primary" [disabled]="changeButton" (click)="onChangeText()">Submit</button>
+<p>Welcome here</p>
+<!-- Event binding -->
+<!-- <input type="text" class="form-control" (click)="grabInputText($event)"> -->
+<!-- Two way binding -->
+<input type="text" class="form-control" [(ngModel)] = "inputText">
+<p>{{inputText}}</p>
+<button class="btn-outline-primary" [disabled]="!changeButton" (click)="onChangeText()">Submit</button>
+<p *ngIf="clear">Text is added, new text is {{inputText}}</p>
 <h2>{{changeText}}</h2>
 <h3>{{changeButton}}</h3>

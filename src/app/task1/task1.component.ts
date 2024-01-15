@@ -6,17 +6,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./task1.component.css']
 })
 export class Task1Component {
-  changeButton = true;
-  changeText = "Text is changed"
+  changeButton = false;
+  changeText = "Text is not changed"
+  inputText = "Random text";
+  clear = false; 
 
   constructor(){
   setTimeout(() => {
-    this.changeButton = false
-  }, 2000);
+    this.changeButton = true
+  }, 4000);
 }
 
  onChangeText() {
-  this.changeText = "Text is not changed"
+  this.clear = true;
+  this.changeText = "Text is changed. New text is: " + this.inputText;
+}
+grabInputText(event: Event){
+  this.inputText = (<HTMLInputElement>event.target).value;
 }
 }
 

@@ -1,0 +1,20 @@
+<h1>Directive Attribute Task</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8 ">
+        <ol>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae dolore deleniti velit quas, saepe necessitatibus nostrum, reprehenderit minus optio dolorem accusantium tempora aliquam accusamus deserunt quibusdam officiis. Nulla, architecto reiciendis.
+            Possimus dolorem labore atque voluptatem itaque quaerat vel dignissimos repellendus. Voluptates aspernatur doloremque eius delectus maiores, quam dolorem ducimus fuga accusantium non quas nobis mollitia, unde ratione omnis repudiandae iure.</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem placeat saepe temporibus nesciunt doloribus id. Ratione minus quae, nostrum repellat quasi reprehenderit in, ducimus, accusantium ipsam dolor numquam unde deserunt!</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque autem tempora rem, rerum odio, consectetur impedit deserunt molestiae, accusamus facilis aliquid culpa sit aspernatur quos incidunt sequi eos voluptatem blanditiis.
+            Ut nam, eius quasi cumque voluptatum quisquam, sit nobis a sint repellendus ratione tempora tenetur, incidunt doloribus eaque necessitatibus error at illo rerum. Nostrum, ea eos asperiores earum debitis dicta!
+            Tempore accusamus quos ab pariatur perferendis porro, a at repudiandae. Maxime, tempora assumenda rerum vero explicabo, laborum qui aspernatur magnam quae laudantium reiciendis eum provident, accusantium labore perferendis nobis voluptatibus.</li>
+        </ol>
+<button class="btn btn-primary" (click)="ontoggleDetails()">See Details</button>
+<p *ngIf="showContent">I am Sultan</p>
+<p *ngFor="let logItem of log" [ngStyle]="{backgroundColor: logItem >=2 ? 'blue' : 'trasparent'}" [ngClass]="{'white-text': logItem >=2}">{{logItem}}</p>
+</div>
+</div>
+</div>
+
+
