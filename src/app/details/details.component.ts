@@ -50,9 +50,10 @@ export class DetailsComponent {
     email: new FormControl('')
   })
  constructor(){
-  const houseLocationId = parseInt(this.route.snapshot.params['id'])
-  this.housingLocation = this.housingService.getHousingLocationById(houseLocationId)
- } 
+  const houseLocationId = Number(this.route.snapshot.params['id'])
+  this.housingService.getHousingLocationById(houseLocationId).then(housingLocation=>{
+  this.housingLocation = housingLocation;
+}) } 
  submitForm(){
   this.housingService.submitForm(
     this.applyForm.value.firstName ?? '',
