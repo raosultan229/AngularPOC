@@ -1,27 +1,25 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { HomeComponent } from './home/home.component';
-import { RouterModule } from '@angular/router';
+import { Observable } from 'rxjs';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [
-    HomeComponent,
-    RouterModule,
-  ],
-  template: `
-    <main>
-      <a [routerLink]="['/']">
-        <header class="brand-name">
-          <img class="brand-logo" src="/assets/logo.svg" alt="logo" aria-hidden="true">
-        </header>
-      </a>
-      <section class="content">
-        <router-outlet></router-outlet>
-      </section>
-    </main>
-  `,
-  styleUrls: ['./app.component.css'],
+  imports:[CommonModule],
+  templateUrl: './app.component.html',
+  // styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'homes';
+  title = 'angular-observables';
+  data: any[] = [];
+
+   myObserable = new Observable((observer)=>{
+    observer.next([1,2,3,4,5,6,7,8,9])
+   });
+
+  getData(){
+
+    this.myObserable.subscribe((value: any)=>{
+    this.data = value;
+    })
+  }
 }
